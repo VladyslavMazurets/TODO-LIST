@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+    background-color: rgb(175,195,34);
+}
+h1 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.done {
+    color: rgb(255, 255, 255);
+    text-decoration: line-through;
 }
+
+li {
+    margin-right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.918);
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.indextodo {
+   margin-right: 20rem;
+}
+
+.delButton {
+    background-color: red;
+}
+
+.forma {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+.todocheck {
+    margin-left: 20rem;
+}
+
+.noTodos{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: white;
+}
+
