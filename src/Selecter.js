@@ -20,13 +20,18 @@ function Selecter({ setStatus }) {
                         fontWeight: 'bold',
                         fontSize: 25,
                         fontFamily: 'Arima',
-                        color: '#3E46D1'
+                        color: '#3E46D1',
                     }}>
                         Choose
                     </Typography>
                 </InputLabel>
 
-                <Select sx={{ border: 2, color: '#3E46D1' }}
+                <Select sx={{
+                    border: 2,
+                    borderRadius: 5,
+                    width: '10rem',
+                    color: '#3E46D1',
+                }}
                     onChange={statusHandler}
                     label="All"
                     labelId="demo-simple-select-label"

@@ -28,37 +28,53 @@ function TodoItem({ todo, index, onChange }) {
                 </Typography>
             </strong>
             <span className={classes.join(' ')}>
-            
-                    <Typography sx={{
-                        fontFamily: 'Arima',
-                        fontWeight: 'bold',
-                        fontSize: 25,
-                        color: '#384BDB',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        positions: 'absolute'
-                    }}>
-                        {todo.title}
-                    </Typography>
 
-                    <Checkbox sx={{
-                        display: 'flex',
-                    }}
-                        defaultChecked color="success"
-                        checked={todo.completed}
-                        onChange={() => onChange(todo.id)}
-                    />
+                <Typography sx={{
+                    fontFamily: 'Arima',
+                    fontWeight: 'bold',
+                    fontSize: 25,
+                    color: '#384BDB',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    positions: 'absolute'
+                }}>
+                    {todo.title}
+                </Typography>
+
+                <Checkbox sx={{
+                    display: 'flex',
+                }}
+                    defaultChecked color="success"
+                    checked={todo.completed}
+                    onChange={() => onChange(todo.id)}
+                />
 
             </span>
 
-            <Button
+            <Button sx={{
+                border: 2, 
+                borderRadius: 5, 
+                borderColor: 'red'
+            }}
                 variant="outlined"
-                startIcon={<DeleteIcon />}
+                startIcon={
+                    <Typography sx={{ color: 'red' }}>
+                        <DeleteIcon />
+                    </Typography>
+                }
                 className="delButton"
                 type="button"
                 onClick={removeTodo.bind(null, todo.id)}
             >
-                Delete
+                <Typography sx={{ 
+                    color: 'red',
+                    fontFamily: 'Arima',
+                    fontWeight: 'bold',
+                    fontSize: 20
+
+                    }}>
+                    Delete
+                </Typography>
             </Button>
 
         </li>

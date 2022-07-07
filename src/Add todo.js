@@ -44,6 +44,7 @@ function AddTodo({ onCreate }) {
                             border: 2,
                             marginBottom: 2,
                             borderRadius: 5,
+                            width: '40rem',
                             color: '#3E46D1'
                         }}
                         label={
