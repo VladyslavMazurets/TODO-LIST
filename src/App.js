@@ -3,6 +3,7 @@ import TodoList from "./TodoList";
 import AddTodo from "./Add todo";
 import Context from "./Context";
 import Selecter from "./Selecter";
+import { Box, Typography } from "@mui/material";
 import "./index.css";
 
 function App() {
@@ -82,27 +83,40 @@ function App() {
           id: Date.now(),
           completed: false
         }
-        
+
       ])
-      
+
     )
   }
 
   return (
-    <Context.Provider value={{ removeTodo }}>
-      <>
-        <AddTodo onCreate={addTodo} />
-        <Selecter setStatus={setStatus} />
-        {todos.length ?
-          <TodoList
-            todos={todos}
-            onToggle={toggleTodo}
-            delTodo={removeTodo}
-            setStatus={setStatus}
-            filteredTodos={filteredTodos} /> :
-          <p className="noTodos">No todos</p>}
-      </>
-    </Context.Provider>
+    <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+      <Context.Provider value={{ removeTodo }}>
+        <>
+          <AddTodo onCreate={addTodo} />
+          <Selecter setStatus={setStatus} />
+          {todos.length ?
+            <TodoList
+              todos={todos}
+              onToggle={toggleTodo}
+              delTodo={removeTodo}
+              setStatus={setStatus}
+              filteredTodos={filteredTodos} /> :
+            <Typography sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              textTransform: 'uppercase',
+              fontFamily: 'Splash',
+              color: '#3E46D1',
+              fontWeight: 'bold',
+              fontSize: 25,
+              marginTop: 10
+            }}>
+              No todos
+            </Typography>}
+        </>
+      </Context.Provider>
+    </Box>
   )
 
 }

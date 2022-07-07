@@ -1,11 +1,9 @@
-html {
-    background-color: rgb(175,195,34);
-}
-h1 {
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-}
+html, body {
+    height:100%; 
+    width:100%; 
+    margin:0; 
+    padding:0;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);}
 
 .done {
     color: rgb(255, 255, 255);
@@ -18,33 +16,10 @@ li {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.918);
+    border: 2px solid #3E46D1;
     border-radius: 4px;
     margin-bottom: 0.5rem;
 }
 
-.indextodo {
-   margin-right: 20rem;
-}
 
-.delButton {
-    background-color: red;
-}
-
-.forma {
-    justify-content: center;
-    display: flex;
-    margin-bottom: 3rem;
-}
-
-.todocheck {
-    margin-left: 20rem;
-}
-
-.noTodos{
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase;
-    color: white;
-}
 

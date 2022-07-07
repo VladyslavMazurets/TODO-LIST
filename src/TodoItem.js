@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import Context from "./Context";
-import { Button, Checkbox } from "@mui/material";
+import { Button, Checkbox, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { positions } from "@mui/system";
 
 
 function TodoItem({ todo, index, onChange }) {
@@ -16,16 +16,38 @@ function TodoItem({ todo, index, onChange }) {
 
     return (
         <li>
-            <strong className="indextodo"> {index + 1} </strong>
-            <span className={classes.join(' ')}>
-                {todo.title}
+            <strong className="indextodo">
+                <Typography sx={{
+                    fontFamily: 'Arima',
+                    fontWeight: 'bold',
+                    fontSize: 25,
+                    color: '#384BDB'
 
-                <Checkbox 
-                    defaultChecked color="success"
-                    className="todocheck"
-                    checked={todo.completed}
-                    onChange={() => onChange(todo.id)}
-                />
+                }}>
+                    {index + 1 + "."}
+                </Typography>
+            </strong>
+            <span className={classes.join(' ')}>
+            
+                    <Typography sx={{
+                        fontFamily: 'Arima',
+                        fontWeight: 'bold',
+                        fontSize: 25,
+                        color: '#384BDB',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        positions: 'absolute'
+                    }}>
+                        {todo.title}
+                    </Typography>
+
+                    <Checkbox sx={{
+                        display: 'flex',
+                    }}
+                        defaultChecked color="success"
+                        checked={todo.completed}
+                        onChange={() => onChange(todo.id)}
+                    />
 
             </span>
 

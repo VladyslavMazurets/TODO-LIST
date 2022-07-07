@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Fab } from "@mui/material";
+import { Box, Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-
 
 function AddTodo({ onCreate }) {
 
@@ -23,18 +21,43 @@ function AddTodo({ onCreate }) {
     return (
         <div>
             <Typography
-                ml={105}
-                fontWeight={900}
-                variant="h3"
-                component="div"
-                mt={5} mb={5}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    fontWeight: 800,
+                    fontSize: 72,
+                    fontFamily: 'Splash',
+                    color: '#3E46D1'
+
+                }}
             >
                 Todo List
             </Typography>
-        
+            <Box sx={{
+                background: 'none',
+                display: 'flex',
+                justifyContent: 'center'
+            }}>
                 <form onSubmit={submitHandler}>
-                    <TextField sx={{border: 2, color: 'white'}}
-                        label="Enter your note"
+                    <TextField
+                        sx={{
+                            border: 2,
+                            marginBottom: 2,
+                            borderRadius: 5,
+                            color: '#3E46D1'
+                        }}
+                        label={
+                            <Typography sx={{
+                                color: '#3E46D1',
+                                fontWeight: 'bold',
+                                fontSize: 25,
+                                fontFamily: 'Arima'
+                            }}>
+
+                                Enter your note
+
+                            </Typography>}
+
                         id="fullWidth"
                         className="iputTodo"
                         type='text'
@@ -47,9 +70,11 @@ function AddTodo({ onCreate }) {
                         color="primary"
                         aria-label="add"
                         type="submit">
+
                         <AddIcon />
                     </Fab>
-                </form>
+                </form >
+            </Box>
         </div>
     )
 }
